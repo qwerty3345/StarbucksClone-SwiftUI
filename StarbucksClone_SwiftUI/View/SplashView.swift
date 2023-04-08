@@ -15,7 +15,7 @@ struct SplashView: View {
       Color("StarbucksGreen")
         .ignoresSafeArea()
 
-      Image("LogoImage")
+      Image("SplashLogoImage")
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(width: 120, height: 120)

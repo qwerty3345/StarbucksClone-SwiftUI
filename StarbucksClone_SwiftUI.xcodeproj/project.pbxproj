@@ -11,6 +11,7 @@
 		B409581F29E149BC00101DCB /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B409581E29E149BC00101DCB /* OrderView.swift */; };
 		B409582129E149C500101DCB /* MyMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B409582029E149C500101DCB /* MyMenuView.swift */; };
 		B409582329E149C900101DCB /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B409582229E149C900101DCB /* CartView.swift */; };
+		B409582629E1509A00101DCB /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B409582529E1509A00101DCB /* UIScreen+Size.swift */; };
 		B40E77F329E1311E00860A55 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E77F229E1311E00860A55 /* SplashView.swift */; };
 		B4D1050B29DFAA2F00629C1D /* StarbucksClone_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D1050A29DFAA2F00629C1D /* StarbucksClone_SwiftUIApp.swift */; };
 		B4D1050D29DFAA2F00629C1D /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D1050C29DFAA2F00629C1D /* MainTabView.swift */; };
@@ -22,10 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B409581C29E149B700101DCB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B409581C29E149B700101DCB /* HomeView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B409581E29E149BC00101DCB /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		B409582029E149C500101DCB /* MyMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuView.swift; sourceTree = "<group>"; };
 		B409582229E149C900101DCB /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		B409582529E1509A00101DCB /* UIScreen+Size.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "UIScreen+Size.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		B40E77F229E1311E00860A55 /* SplashView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B4D1050729DFAA2F00629C1D /* StarbucksClone_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarbucksClone_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D1050A29DFAA2F00629C1D /* StarbucksClone_SwiftUIApp.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = StarbucksClone_SwiftUIApp.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -53,6 +55,14 @@
 			children = (
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B409582429E1508700101DCB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B409582529E1509A00101DCB /* UIScreen+Size.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		B40E77F029E12F5D00860A55 /* View */ = {
@@ -96,6 +106,7 @@
 		B4D1050929DFAA2F00629C1D /* StarbucksClone_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				B409582429E1508700101DCB /* Util */,
 				B4D1050A29DFAA2F00629C1D /* StarbucksClone_SwiftUIApp.swift */,
 				B4F7B79829E12AE8002BC08F /* Model */,
 				B40E77F029E12F5D00860A55 /* View */,
@@ -202,6 +213,7 @@
 				B4F7B79D29E12B40002BC08F /* Beverage.swift in Sources */,
 				B4F7B79C29E12B40002BC08F /* Banner.swift in Sources */,
 				B4F7B79E29E12B40002BC08F /* WhatsNew.swift in Sources */,
+				B409582629E1509A00101DCB /* UIScreen+Size.swift in Sources */,
 				B40E77F329E1311E00860A55 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -313,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -339,7 +351,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +384,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
