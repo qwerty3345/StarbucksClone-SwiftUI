@@ -68,8 +68,8 @@
 		B40E77F029E12F5D00860A55 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B4D1050C29DFAA2F00629C1D /* MainTabView.swift */,
 				B40E77F229E1311E00860A55 /* SplashView.swift */,
+				B4D1050C29DFAA2F00629C1D /* MainTabView.swift */,
 				B409581C29E149B700101DCB /* HomeView.swift */,
 				B409581E29E149BC00101DCB /* OrderView.swift */,
 				B409582029E149C500101DCB /* MyMenuView.swift */,
