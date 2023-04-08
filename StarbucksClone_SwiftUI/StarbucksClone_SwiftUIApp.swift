@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct StarbucksClone_SwiftUIApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
     }
+  }
 }
