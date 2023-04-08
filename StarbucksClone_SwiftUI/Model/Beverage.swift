@@ -43,7 +43,7 @@ extension Beverage {
   static var recommend: [Beverage] {
     return [
       .init(name: "Cold Brew with Oat",
-            koreanName: "콜드 블 오트 라떼",
+            koreanName: "콜드 브루 오트 라떼",
             categoryOption: .free,
             thumbnailImage: UIImage(named: "Cold Brew with Oat"),
             price: 5800,

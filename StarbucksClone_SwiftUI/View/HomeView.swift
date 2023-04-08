@@ -115,6 +115,8 @@ struct RecommendationView: View {
             }
 
             Text(beverage.koreanName)
+              .lineLimit(2)
+              .minimumScaleFactor(0.5)
               .multilineTextAlignment(.center)
               .fixedSize(horizontal: false, vertical: true)
           }.frame(width: 112)
@@ -157,6 +159,7 @@ struct PromotionView: View {
               .multilineTextAlignment(.center)
               .frame(width: 144, alignment: .leading)
               .fixedSize(horizontal: false, vertical: true)
+
           }
         }
       }.padding(.leading, 16)
