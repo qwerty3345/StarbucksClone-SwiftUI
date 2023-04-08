@@ -14,14 +14,12 @@ struct HomeView: View {
       VStack {
         HomeTitleView(branchName: "프로그라피")
         
-        HomeBannerView(banners: [.findYourTaste, .findYourTaste, .findYourTaste])
-        
+        HomeBannerView()
+
+        RecommendationTitleView(customerName: "홍길동")
         RecommendationView()
         
         PromotionView()
-
-        Spacer()
-        
       }
     }
   }
@@ -56,7 +54,7 @@ struct HomeTitleView: View {
 }
 
 struct HomeBannerView: View {
-  @State var banners: [Banner.MainBanner]
+  var banners = Banner.MainBanner.allCases
   @State var currentPage: Int = 0
 
   var body: some View {
@@ -76,51 +74,62 @@ struct HomeBannerView: View {
     }
     .padding(.top, 20)
 
-
     PageControlView(currentPage: $currentPage, numberOfPages: banners.count)
       .padding(.bottom, 20)
   }
 }
 
-struct RecommendationView: View {
-  var body: some View {
-    VStack {
-      HStack(spacing: 0) {
-        Text("홍길동")
-          .foregroundColor(.brown)
-          .font(.title2)
-          .fontWeight(.bold)
-          .multilineTextAlignment(.leading)
-        Text("님을 위한 추천 메뉴")
-          .font(.title2)
-          .fontWeight(.bold)
-          .multilineTextAlignment(.leading)
-        Spacer()
-      }.padding(.leading, 20)
+struct RecommendationTitleView: View {
+  @State var customerName: String
 
-      ScrollView(.horizontal, showsIndicators: false) {
-        HStack(spacing: 16) {
-          ForEach(10..<15) { id in
-            VStack {
-              Image("Frame \(id)")
+  var body: some View {
+    HStack(spacing: 0) {
+      Text(customerName)
+        .foregroundColor(.brown)
+        .font(.title2)
+        .fontWeight(.bold)
+        .multilineTextAlignment(.leading)
+      Text("님을 위한 추천 메뉴")
+        .font(.title2)
+        .fontWeight(.bold)
+        .multilineTextAlignment(.leading)
+      Spacer()
+    }.padding(.leading, 20)
+  }
+}
+
+struct RecommendationView: View {
+  private var recommendBeverages = Beverage.recommend
+
+  var body: some View {
+    ScrollView(.horizontal, showsIndicators: false) {
+      HStack(spacing: 16) {
+        ForEach(recommendBeverages) { beverage in
+          VStack {
+            if let image = beverage.thumbnailImage {
+              Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 110, height: 110)
                 .clipShape(Circle())
-              Text("제주 비자림 콜드브루")
-                .multilineTextAlignment(.center)
-                .fixedSize(horizontal: false, vertical: true)
-            }.frame(width: 112)
+            }
 
-          }
-        }.padding(.leading, 20)
-      }
+            Text(beverage.koreanName)
+              .multilineTextAlignment(.center)
+              .fixedSize(horizontal: false, vertical: true)
+          }.frame(width: 112)
+
+        }
+      }.padding(.leading, 20)
     }
   }
 }
 
 struct PromotionView: View {
+  var whatsNewEvents = Event.WhatsNew.allCases.map { $0.items }
+
   var body: some View {
+
     HStack {
       Text("What's new")
         .font(.title2)
@@ -130,23 +139,24 @@ struct PromotionView: View {
 
     ScrollView(.horizontal, showsIndicators: false) {
       HStack(spacing: 16) {
-        ForEach(1..<5) { id in
+        ForEach(whatsNewEvents) { event in
           VStack(spacing: 6) {
-            Image("LoveUs")
-              .resizable()
-              .aspectRatio(contentMode: .fit)
-              .frame(width: 144, height: 144)
-              .cornerRadius(10)
-            Text("2023-03-21 ~ 2023-05-02")
+            if let image = event.thumbnailImage {
+              Image(uiImage: image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 144, height: 144)
+                .cornerRadius(10)
+            }
+            Text(event.eventPeriod)
               .font(.system(size: 9))
               .foregroundColor(.gray)
               .frame(width: 144, alignment: .leading)
-            Text("스타벅스 현대카드 3월 혜택")
+            Text(event.title)
               .font(.system(size: 14))
               .multilineTextAlignment(.center)
               .frame(width: 144, alignment: .leading)
               .fixedSize(horizontal: false, vertical: true)
-
           }
         }
       }.padding(.leading, 16)

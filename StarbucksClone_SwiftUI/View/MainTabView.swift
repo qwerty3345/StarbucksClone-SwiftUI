@@ -13,34 +13,37 @@ struct MainTabView: View {
     TabView {
       HomeView()
         .tabItem {
-          Image("Home")
-            .renderingMode(.template)
+          Image(systemName: "house")
+//          Image("house")
           Text("홈")
         }
 
       OrderView()
         .tabItem {
-          Image("Order")
-            .renderingMode(.template)
+          Image(systemName: "cup.and.saucer")
+//          Image("tumbler")
           Text("주문")
         }
 
       MyMenuView()
         .tabItem {
-          Image("MyMemu")
-            .renderingMode(.template)
+          Image(systemName: "heart.fill")
+//          Image("heart")
           Text("나의메뉴")
         }
 
       CartView()
         .tabItem {
-          Image("Cart")
-            .renderingMode(.template)
+          Image(systemName: "cart.fill")
+//          Image("basket")
+//            .resizable()
+//            .renderingMode(.original)
+//            .aspectRatio(contentMode: .fit)
+//            .frame(width: 24, height: 24)
           Text("장바구니")
         }
     }
-    .accentColor(Color("StarbucksGreen"))
-    
+
   }
 }
 

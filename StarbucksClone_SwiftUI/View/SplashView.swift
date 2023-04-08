@@ -12,10 +12,10 @@ struct SplashView: View {
 
   var body: some View {
     ZStack {
-      Color("StarbucksGreen")
+      Color.accentColor
         .ignoresSafeArea()
 
-      Image("SplashLogoImage")
+      Image("logo")
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(width: 120, height: 120)
