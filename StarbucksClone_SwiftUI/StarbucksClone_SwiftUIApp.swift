@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct StarbucksClone_SwiftUIApp: App {
+  @State var isSplashViewEnded = false
+
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      if isSplashViewEnded {
+        MainTabView()
+      } else {
+        SplashView(isSplashViewEnded: $isSplashViewEnded)
+      }
     }
   }
 }
