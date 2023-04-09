@@ -15,7 +15,7 @@
 		B409582929E18D6C00101DCB /* PageControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B409582829E18D6C00101DCB /* PageControllerView.swift */; };
 		B40E77F329E1311E00860A55 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40E77F229E1311E00860A55 /* SplashView.swift */; };
 		B45F2C7729E2A2C500BFCD16 /* OrderCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45F2C7629E2A2C500BFCD16 /* OrderCategoryView.swift */; };
-		B45F2C7A29E2A2E800BFCD16 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45F2C7929E2A2E800BFCD16 /* OrderDetailView.swift */; };
+		B45F2C7A29E2A2E800BFCD16 /* OrderBeverageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45F2C7929E2A2E800BFCD16 /* OrderBeverageView.swift */; };
 		B4D1050B29DFAA2F00629C1D /* StarbucksClone_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D1050A29DFAA2F00629C1D /* StarbucksClone_SwiftUIApp.swift */; };
 		B4D1050D29DFAA2F00629C1D /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D1050C29DFAA2F00629C1D /* MainTabView.swift */; };
 		B4D1050F29DFAA3100629C1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4D1050E29DFAA3100629C1D /* Assets.xcassets */; };
@@ -34,7 +34,7 @@
 		B409582829E18D6C00101DCB /* PageControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControllerView.swift; sourceTree = "<group>"; };
 		B40E77F229E1311E00860A55 /* SplashView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B45F2C7629E2A2C500BFCD16 /* OrderCategoryView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = OrderCategoryView.swift; sourceTree = "<group>"; tabWidth = 2; };
-		B45F2C7929E2A2E800BFCD16 /* OrderDetailView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; tabWidth = 2; };
+		B45F2C7929E2A2E800BFCD16 /* OrderBeverageView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = OrderBeverageView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B4D1050729DFAA2F00629C1D /* StarbucksClone_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarbucksClone_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D1050A29DFAA2F00629C1D /* StarbucksClone_SwiftUIApp.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = StarbucksClone_SwiftUIApp.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B4D1050C29DFAA2F00629C1D /* MainTabView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -106,7 +106,7 @@
 			children = (
 				B409581E29E149BC00101DCB /* OrderView.swift */,
 				B45F2C7629E2A2C500BFCD16 /* OrderCategoryView.swift */,
-				B45F2C7929E2A2E800BFCD16 /* OrderDetailView.swift */,
+				B45F2C7929E2A2E800BFCD16 /* OrderBeverageView.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -241,7 +241,7 @@
 				B4F7B79C29E12B40002BC08F /* Banner.swift in Sources */,
 				B4F7B79E29E12B40002BC08F /* WhatsNew.swift in Sources */,
 				B409582629E1509A00101DCB /* UIScreen+Size.swift in Sources */,
-				B45F2C7A29E2A2E800BFCD16 /* OrderDetailView.swift in Sources */,
+				B45F2C7A29E2A2E800BFCD16 /* OrderBeverageView.swift in Sources */,
 				B40E77F329E1311E00860A55 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

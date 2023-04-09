@@ -14,7 +14,7 @@ struct OrderCategoryView: View {
     VStack {
         List(beverages) { beverage in
           NavigationLink {
-
+            OrderBeverageView(beverage: beverage)
           } label: {
             OrderCategoryCellView(beverage: beverage)
           }
