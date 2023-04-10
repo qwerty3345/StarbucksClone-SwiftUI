@@ -13,7 +13,7 @@ struct HomeView: View {
     ScrollView {
       VStack {
         HomeTitleView(branchName: "프로그라피")
-        
+
         HomeBannerView()
 
         RecommendationTitleView(customerName: "홍길동")
@@ -34,7 +34,7 @@ struct HomeView_Previews: PreviewProvider {
 
 
 struct HomeTitleView: View {
-  @State var branchName: String
+  var branchName: String
 
   var body: some View {
     HStack {
@@ -58,29 +58,31 @@ struct HomeBannerView: View {
   @State var currentPage: Int = 0
 
   var body: some View {
-    ScrollView(.horizontal, showsIndicators: false) {
-      HStack {
-        ForEach(banners) { banner in
-          if let image = banner.item.thumbnailImage {
-            Image(uiImage: image)
-              .resizable()
-              .cornerRadius(10)
-              .aspectRatio(contentMode: .fit)
-              .padding(.horizontal, 20)
-              .frame(width: UIScreen.screenWidth)
-          }
-        }
+    TabView {
+      ForEach(banners, id: \.self) { banner in
+        bannerImageView(of: banner)
       }
     }
-    .padding(.top, 20)
+    .tabViewStyle(PageTabViewStyle())
+    .frame(width: UIScreen.screenWidth, height: 250)
+  }
 
-    PageControlView(currentPage: $currentPage, numberOfPages: banners.count)
-      .padding(.bottom, 20)
+  @ViewBuilder
+  func bannerImageView(of banner: Banner.MainBanner) -> some View {
+    if let image = banner.item.thumbnailImage {
+      Image(uiImage: image)
+        .resizable()
+        .cornerRadius(10)
+        .aspectRatio(contentMode: .fit)
+        .padding(.horizontal, 20)
+        .frame(width: UIScreen.screenWidth)
+        .tabItem { Text("\(banner.id)") }
+    }
   }
 }
 
 struct RecommendationTitleView: View {
-  @State var customerName: String
+  var customerName: String
 
   var body: some View {
     HStack(spacing: 0) {

@@ -31,7 +31,7 @@
 		B409582029E149C500101DCB /* MyMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuView.swift; sourceTree = "<group>"; };
 		B409582229E149C900101DCB /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		B409582529E1509A00101DCB /* UIScreen+Size.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "UIScreen+Size.swift"; sourceTree = "<group>"; tabWidth = 2; };
-		B409582829E18D6C00101DCB /* PageControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControllerView.swift; sourceTree = "<group>"; };
+		B409582829E18D6C00101DCB /* PageControllerView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PageControllerView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B40E77F229E1311E00860A55 /* SplashView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B45F2C7629E2A2C500BFCD16 /* OrderCategoryView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = OrderCategoryView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B45F2C7929E2A2E800BFCD16 /* OrderBeverageView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = OrderBeverageView.swift; sourceTree = "<group>"; tabWidth = 2; };
