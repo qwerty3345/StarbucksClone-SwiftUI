@@ -31,47 +31,49 @@ struct OrderBeverageView: View {
   // MARK: - Body
 
   var body: some View {
-    VStack {
-      if let image = beverage.thumbnailImage {
-        Image(uiImage: image)
-          .resizable()
-          .frame(width: UIScreen.screenWidth, height: UIScreen.screenWidth)
-      }
-
-      VStack(alignment: .leading) {
-        BeverageDescriptionView(beverage: beverage)
-
-        HotIcePickerView(isHotSelected: $isHotSelected)
-
-        if let descriptionCaution = beverage.descriptionCaution {
-          BeverageCautionView(caution: descriptionCaution)
+    ScrollView {
+      VStack {
+        if let image = beverage.thumbnailImage {
+          Image(uiImage: image)
+            .resizable()
+            .frame(width: UIScreen.screenWidth, height: UIScreen.screenWidth)
         }
 
-        BeverageAlergyView(alergyFactorText: alergyFactorText)
+        VStack(alignment: .leading) {
+          BeverageDescriptionView(beverage: beverage)
 
-        Text("사이즈 선택")
-          .fontWeight(.semibold)
+          HotIcePickerView(isHotSelected: $isHotSelected)
 
-        Picker("선택", selection: $size) {
-          Text("Tall")
-            .tag(Size.tall)
+          if let descriptionCaution = beverage.descriptionCaution {
+            BeverageCautionView(caution: descriptionCaution)
+          }
 
-          Text("Grande")
-            .tag(Size.grande)
+          BeverageAlergyView(alergyFactorText: alergyFactorText)
 
-          Text("Venti")
-            .tag(Size.venti)
+          Text("사이즈 선택")
+            .fontWeight(.semibold)
+
+          Picker("선택", selection: $size) {
+            Text("Tall")
+              .tag(Size.tall)
+
+            Text("Grande")
+              .tag(Size.grande)
+
+            Text("Venti")
+              .tag(Size.venti)
+          }
+          .pickerStyle(.segmented)
+          .cornerRadius(20)
+
+
         }
-        .pickerStyle(.segmented)
-        .cornerRadius(20)
+        .padding(.horizontal, 15)
+
+        Spacer()
 
 
       }
-      .padding(.horizontal, 15)
-
-      Spacer()
-
-
     }
     .ignoresSafeArea()
 

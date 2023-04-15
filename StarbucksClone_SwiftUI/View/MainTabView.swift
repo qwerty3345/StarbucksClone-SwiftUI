@@ -13,33 +13,25 @@ struct MainTabView: View {
     TabView {
       HomeView()
         .tabItem {
-          Image(systemName: "house")
-//          Image("house")
+          Image("tabitem.home")
           Text("홈")
         }
 
       OrderView()
         .tabItem {
-          Image(systemName: "cup.and.saucer")
-//          Image("tumbler")
+          Image("tabitem.order")
           Text("주문")
         }
 
       MyMenuView()
         .tabItem {
-          Image(systemName: "heart.fill")
-//          Image("heart")
+          Image("tabitem.home.mymenu")
           Text("나의메뉴")
         }
 
       CartView()
         .tabItem {
-          Image(systemName: "cart.fill")
-//          Image("basket")
-//            .resizable()
-//            .renderingMode(.original)
-//            .aspectRatio(contentMode: .fit)
-//            .frame(width: 24, height: 24)
+          Image("tabitem.cart")
           Text("장바구니")
         }
     }
