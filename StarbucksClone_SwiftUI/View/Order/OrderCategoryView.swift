@@ -8,27 +8,34 @@
 import SwiftUI
 
 struct OrderCategoryView: View {
-  var beverages: [Beverage]
-
+  
+  // MARK: - Properties
+  
+  @ObservedObject var viewModel: OrderCategoryViewModel
+  
+  // MARK: - View
+  
   var body: some View {
     VStack {
-        List(beverages) { beverage in
-          NavigationLink {
-            OrderBeverageView(beverage: beverage)
-          } label: {
-            OrderCategoryCellView(beverage: beverage)
-          }
-          .listRowSeparator(.hidden)
-          .padding(.vertical, 5)
+      List(viewModel.beverages) { beverage in
+        NavigationLink {
+          let viewModel = OrderBeverageViewModel(beverage: beverage)
+          OrderBeverageView(viewModel: viewModel)
+        } label: {
+          OrderCategoryCellView(beverage: beverage)
         }
-        .listStyle(.plain)
+        .listRowSeparator(.hidden)
+        .padding(.vertical, 5)
+      }
+      .listStyle(.plain)
     }
+    .navigationBarBackButtonHidden(true)
   }
 }
 
 struct OrderCategoryCellView: View {
   var beverage: Beverage
-
+  
   var body: some View {
     HStack(spacing: 15) {
       if let image = beverage.thumbnailImage {
@@ -38,7 +45,7 @@ struct OrderCategoryCellView: View {
           .frame(width: 90, height: 90)
           .clipShape(Circle())
       }
-
+      
       VStack(alignment: .leading, spacing: 5) {
         Text(beverage.koreanName)
           .fontWeight(.semibold)
@@ -57,6 +64,11 @@ struct OrderCategoryCellView: View {
 
 struct OrderCategoryView_Previews: PreviewProvider {
   static var previews: some View {
-    OrderCategoryView(beverages: Beverage.Category.allCases.first!.beverages)
+//    OrderCategoryView(beverages: Beverage.Category.allCases.first!.beverages)
+    OrderCategoryView(
+      viewModel: OrderCategoryViewModel(
+        beverages:  Beverage.Category.allCases.first!.beverages
+      )
+    )
   }
 }

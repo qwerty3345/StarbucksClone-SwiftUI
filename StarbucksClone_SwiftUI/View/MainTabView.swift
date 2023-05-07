@@ -10,32 +10,33 @@ import SwiftUI
 struct MainTabView: View {
   var body: some View {
 
-    TabView {
-      HomeView()
-        .tabItem {
-          Image("tabitem.home")
-          Text("홈")
-        }
-
-      OrderView()
-        .tabItem {
-          Image("tabitem.order")
-          Text("주문")
-        }
-
-      MyMenuView()
-        .tabItem {
-          Image("tabitem.home.mymenu")
-          Text("나의메뉴")
-        }
-
-      CartView()
-        .tabItem {
-          Image("tabitem.cart")
-          Text("장바구니")
-        }
+    NavigationView {
+      TabView {
+        HomeView()
+          .tabItem {
+            Image("tabitem.home")
+            Text("홈")
+          }
+        
+        OrderView(viewModel: OrderViewModel())
+          .tabItem {
+            Image("tabitem.order")
+            Text("주문")
+          }
+        
+        MyMenuView()
+          .tabItem {
+            Image("tabitem.home.mymenu")
+            Text("나의메뉴")
+          }
+        
+        CartView()
+          .tabItem {
+            Image("tabitem.cart")
+            Text("장바구니")
+          }
+      }
     }
-
   }
 }
 

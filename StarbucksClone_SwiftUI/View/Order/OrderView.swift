@@ -8,30 +8,35 @@
 import SwiftUI
 
 struct OrderView: View {
-
-  var categories: [Beverage.Category] = Beverage.Category.allCases
-
+  
+  // MARK: - Properties
+  
+  @ObservedObject var viewModel: OrderViewModel
+  
+  // MARK: - View
+  
   var body: some View {
-
+    
     VStack {
       SearchTabbarView()
-
+      
       NavigationView {
-        List(categories) { category in
-
+        List(viewModel.categories) { category in
+          
           NavigationLink {
-            OrderCategoryView(beverages: category.beverages)
+            let viewModel = OrderCategoryViewModel(beverages: category.beverages)
+            OrderCategoryView(viewModel: viewModel)
               .navigationTitle(category.categoryTitle)
           } label: {
             OrderCellView(category: category)
           }
           .listRowSeparator(.hidden)
           .padding(.vertical, 5)
-
+          
         }
         .listStyle(.plain)
         .navigationTitle("주문하기")
-
+        
       }
     }
   }
@@ -39,7 +44,7 @@ struct OrderView: View {
 
 struct OrderCellView: View {
   var category: Beverage.Category
-
+  
   var body: some View {
     HStack(spacing: 15) {
       if let image = category.thumbnailImage {
@@ -49,7 +54,7 @@ struct OrderCellView: View {
           .frame(width: 80, height: 80)
           .clipShape(Circle())
       }
-
+      
       VStack(alignment: .leading, spacing: 5) {
         Text(category.categoryTitle)
           .fontWeight(.semibold)
@@ -63,7 +68,7 @@ struct OrderCellView: View {
 
 struct OrderView_Previews: PreviewProvider {
   static var previews: some View {
-    OrderView()
+    OrderView(viewModel: OrderViewModel())
   }
 }
 
@@ -72,7 +77,7 @@ struct SearchTabbarView: View {
     HStack {
       Spacer()
       Button(action: {
-
+        
       }) {
         Image(systemName: "magnifyingglass")
           .resizable()
